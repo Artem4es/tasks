@@ -76,5 +76,5 @@ class ProductView(views.APIView):
         except IndexError:
             return Response({'error': 'article doesn\'t exist'})
 
-        serializer = GetSerializer(prod_insts, many=True)
+        serializer = GetSerializer(prod_insts[0], many=False)
         return Response(serializer.data)
